@@ -135,4 +135,17 @@ clang-format -i -style=Mozilla hello_world.cpp
 ```
 3. **commit**, **push**, создайте pull-request `patch2 -> master`.
 ```
-
+ git pull origin master
+ git rebase master
+```
+Изменил `hello_world.cpp`.
+```
+git commit -am "solve conflict"
+git rebase --continue
+```
+7. Сделайте *force* push в ветку `patch2`.
+```
+git push -f origin patch2
+```
+8. Убедитель, что в pull-request пропали конфликтны.
+9. Вмержите pull-request `patch2 -> master`.
