@@ -25,3 +25,19 @@ git add hello_worl.cpp
 ```
 git commit -m "added hello_world.cpp"
 ```
+6. Изменитьте исходный код так, чтобы программа через стандартный поток ввода запрашивалось имя пользователя. А в стандартный поток вывода печаталось сообщение `Hello world from @name`, где `@name` имя пользователя.
+```
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main ()
+{
+    string name;
+    cout << "Enter name:";
+    cin >> name;
+    cout << "Hello world from " << name << endl;
+    return 0;
+}
+```

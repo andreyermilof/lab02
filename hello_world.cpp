@@ -1,4 +1,13 @@
 #include <iostream>
+#include <string>
+
 using namespace std;
+
 int main ()
-{cout << "hello world" << endl;return 0;}
+{
+    string name;
+    cout << "Enter name:";
+    cin >> name;
+    cout << "Hello world from " << name << endl;
+    return 0;
+}
