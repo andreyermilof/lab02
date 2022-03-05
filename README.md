@@ -1,3 +1,4 @@
+### Part 1
 1. Создайте пустой репозиторий на сервисе github.com.
 ```
 https://github.com/andreyermilof/lab02
@@ -40,4 +41,67 @@ int main ()
     cout << "Hello world from " << name << endl;
     return 0;
 }
+```
+7. Закоммитьте новую версию программы.
+```
+git commit -am "New version of the program"
+```
+8. Запуште изменения в удалёный репозиторий.
+```
+git push -u origin main
+```
+9. Проверьте, что история коммитов доступна в удалёный репозитории.
+```
+https://github.com/andreyermilof/lab02/commits/main
+```
+### Part 2
+1. В локальной копии репозитория создайте локальную ветку `patch1`.
+```
+git branch patch1
+```
+2. Внесите изменения в ветке patch1 по исправлению кода и избавления от `using namespace std;`.
+```
+#include <iostream>
+#include <string>
+
+int main ()
+{
+    std::string name;
+    std::cout << "Enter name:";
+    std::cin >> name;
+    std::cout << "Hello world from " << name << std::endl;
+    return 0;
+}
+```
+3. **commit**, **push** локальную ветку в удалённый репозиторий.
+```
+git commit -am "Without namespace"
+git push -u origin patch1
+```
+4. Проверьте, что ветка `patch1` доступна в удалёный репозитории.
+```
+https://github.com/andreyermilof/lab02/tree/patch1
+```
+5. Создайте pull-request `patch1 -> master`.
+```
+https://github.com/andreyermilof/lab02/pull/1
+```
+6. В локальной копии в ветке patch1 добавьте в исходный код комментарии.
+```
+#include <iostream>
+#include <string>
+
+int main ()
+{
+    std::string name;
+    std::cout << "Enter name:";
+    std::cin >> name; //Ввод
+    std::cout << "Hello world from " << name << std::endl;//Вывод
+    return 0;
+}
+```
+7. **commit**, **push**.
+```
+git commit -am "Code with comments"
+git push -u origin patch1
 ```
