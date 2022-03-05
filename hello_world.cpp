@@ -5,7 +5,7 @@ int main ()
 {
     std::string name;
     std::cout << "Enter name:";
-    std::cin >> name;
-    std::cout << "Hello world from " << name << std::endl;
+    std::cin >> name; //Ввод
+    std::cout << "Hello world from " << name << std::endl;//Вывод
     return 0;
 }
