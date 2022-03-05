@@ -11,3 +11,17 @@ git branch -M main
 git remote add origin git@github.com:andreyermilof/lab02.git
 git push -u origin main
 ```
+3. Создайте файл `hello_world.cpp` в локальной копии репозитория (который должен был появиться на шаге 2). Реализуйте программу **Hello world** на языке C++ используя плохой стиль кода. 
+```
+#include <iostream>
+using namespace std;int main ()
+{cout << "hello world" << endl;return 0;}
+```
+4. Добавьте этот файл в локальную копию репозитория.
+```
+git add hello_worl.cpp
+```
+5. Закоммитьте изменения с осмысленным сообщением.
+```
+git commit -m "added hello_world.cpp"
+```
