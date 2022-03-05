@@ -1,3 +1,4 @@
+### Part 1
 1. Создайте пустой репозиторий на сервисе github.com.
 ```
 https://github.com/andreyermilof/lab02
@@ -38,6 +39,37 @@ int main ()
     cout << "Enter name:";
     cin >> name;
     cout << "Hello world from " << name << endl;
+    return 0;
+}
+```
+7. Закоммитьте новую версию программы.
+```
+git commit -am "New version of the program"
+```
+8. Запуште изменения в удалёный репозиторий.
+```
+git push -u origin main
+```
+9. Проверьте, что история коммитов доступна в удалёный репозитории.
+```
+https://github.com/andreyermilof/lab02/commits/main
+```
+### Part 2
+1. В локальной копии репозитория создайте локальную ветку `patch1`.
+```
+git branch patch1
+```
+2. Внесите изменения в ветке patch1 по исправлению кода и избавления от `using namespace std;`.
+```
+#include <iostream>
+#include <string>
+
+int main ()
+{
+    std::string name;
+    std::cout << "Enter name:";
+    std::cin >> name;
+    std::cout << "Hello world from " << name << std::endl;
     return 0;
 }
 ```
