@@ -58,6 +58,7 @@ https://github.com/andreyermilof/lab02/commits/main
 1. В локальной копии репозитория создайте локальную ветку `patch1`.
 ```
 git branch patch1
+git chackout patch1
 ```
 2. Внесите изменения в ветке patch1 по исправлению кода и избавления от `using namespace std;`.
 ```
@@ -105,3 +106,46 @@ int main ()
 git commit -am "Code with comments"
 git push -u origin patch1
 ```
+8. Проверьте, что новые изменения есть в созданном на **шаге 5** pull-request
+```
+https://github.com/andreyermilof/lab02/pull/1/commits/
+```
+9. В удалённый репозитории выполните слияние PR `patch1 -> master` и удалите ветку `patch1` в удаленном репозитории.
+10. Локально выполните **pull**.
+```
+git pull origin
+```
+11. С помощью команды **git log** просмотрите историю в локальной версии ветки `master`.
+```
+git log
+```
+12. Удалите локальную ветку `patch1`.
+```
+git branch -d patch1
+```
+### Part 3
+1. Создайте новую локальную ветку `patch2`.
+```
+git branch patch2
+git checkout patch2
+```
+2. Измените *code style* с помощью утилиты **clang-format**. Например, используя опцию `-style=Mozilla`.
+```
+clang-format -i -style=Mozilla hello_world.cpp
+```
+3. **commit**, **push**, создайте pull-request `patch2 -> master`.
+```
+ git pull origin master
+ git rebase master
+```
+Изменил `hello_world.cpp`.
+```
+git commit -am "solve conflict"
+git rebase --continue
+```
+7. Сделайте *force* push в ветку `patch2`.
+```
+git push -f origin patch2
+```
+8. Убедитель, что в pull-request пропали конфликтны.
+9. Вмержите pull-request `patch2 -> master`.
