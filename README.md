@@ -58,7 +58,7 @@ https://github.com/andreyermilof/lab02/commits/main
 1. В локальной копии репозитория создайте локальную ветку `patch1`.
 ```
 git branch patch1
-git chackout patch1
+git checkout patch1
 ```
 2. Внесите изменения в ветке patch1 по исправлению кода и избавления от `using namespace std;`.
 ```
@@ -134,6 +134,12 @@ git checkout patch2
 clang-format -i -style=Mozilla hello_world.cpp
 ```
 3. **commit**, **push**, создайте pull-request `patch2 -> master`.
+
+4. В ветке master в удаленном репозитории измените комментарии, например, расставьте знаки препинания, переведите комментарии на другой язык.
+
+5. Убедитесь, что в pull-request появились конфликтны.
+
+6. Для этого локально выполните pull + rebase (точную последовательность команд, следует узнать самостоятельно). Исправьте конфликты
 ```
  git pull origin master
  git rebase master
